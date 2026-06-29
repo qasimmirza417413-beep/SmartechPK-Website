@@ -19,8 +19,28 @@ input,button{width:100%;padding:12px;margin:8px 0}
 button{background:#0f8a5f;color:white;border:none}
 footer{background:#0b3d5c;color:white;text-align:center;padding:20px}
 </style>
-</head>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+   <script>
+   const supabaseUrl = 'https://fovxjklfkfsxoxqrxiut.supabase.co';
+
+   const supabaseKey = 'sb_publishable_KqD76BLCJVQyAr1OrInwIQ_xik71yUH';
+
+   const supabase = window.supabase.createClient(
+     supabaseUrl,
+       supabaseKey
+       );
+
+       console.log('Supabase Connected');
+       </script>
+
+       </head>
+
+       
 <body>
+
     
 
 <header>
