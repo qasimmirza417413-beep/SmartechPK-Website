@@ -115,6 +115,32 @@ let energy=(load*hours)/1000;
 let solar=energy/5;
 document.getElementById('result').innerHTML=
 "Daily Energy: "+energy.toFixed(2)+" kWh <br> Recommended Solar Size: "+solar.toFixed(2)+" kW";
+
+}
+async function loadProducts() {
+     const { data, error } = await supabase
+         .from('Products')
+             .select('*');
+
+               if (error) {
+                   console.log(error);
+                       return;
+                         }
+
+                           const grid = document.getElementById('products-grid');
+                             grid.innerHTML = '';
+
+                               data.forEach(product => {
+                                   grid.innerHTML += `
+                                         <div class="card">
+                                                 <img src="${product.image}" width="100%">
+                                                         <h3>${product.category}</h3>
+                                                               </div>
+                                                                   `;
+                                                                     });
+                                                                     }
+
+                                                                     loadProducts();
 }
 </script>
 
